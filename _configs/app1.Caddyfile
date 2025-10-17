@@ -1,0 +1,15 @@
+:80 {
+    auto_https disable_redirects
+    
+    # Ubah root direktori ke /app/public
+    root * /app/public
+    
+    # Gunakan PHP handler bawaan FrankenPHP
+    php_server
+    
+    # Untuk Framework (misalnya Laravel/Symfony)
+    try_files {path} /index.php?{query}
+    
+    # Log requests
+    log
+}

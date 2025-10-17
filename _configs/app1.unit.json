@@ -1,0 +1,34 @@
+{
+  "listeners": {
+    "*:80": {
+      "pass": "routes"
+    }
+  },
+  "routes": [
+    {
+      "match": {
+        "uri": [
+          "/",
+          "*.php"
+        ]
+      },
+      "action": {
+        "pass": "applications/myapp"
+      }
+    },
+    {
+      "action": {
+        "share": "/app"
+      }
+    }
+  ],
+  "applications": {
+    "myapp": {
+      "type": "php",
+      "root": "/app/public",
+      "script": "index.php",
+      "user": "www-data",
+      "group": "www-data"
+    }
+  }
+}
