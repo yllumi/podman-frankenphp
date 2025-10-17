@@ -63,8 +63,12 @@ podman run -d \
   --pod pod-app1 \
   -v /home/yllumi/Developments/PODMAN/app1:/app \
   -v /home/yllumi/Developments/PODMAN/_configs/app1.Caddyfile:/etc/caddy/Caddyfile \
+  --memory 150m \
+  --memory-swap 300m \
   localhost/frankenphp84
 ```
+
+Setiap container sebaiknya dibatasi alokasi memorinya supaya tidak overload dan dimonopoli oleh satu container saja.  
 
 Buka aplikasi di `http://localhost:8091`
 Buka Adminer di `http://localhost:8091/adminer.php`
